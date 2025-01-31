@@ -1,10 +1,10 @@
 import { LucideIcon } from "lucide-react";
 
-interface ToolbarButtonProps {
-    onClick?: () => void;
-    isActive: boolean;
-    icon: LucideIcon;
-}
+// interface ToolbarButtonProps {
+//     onClick?: () => void;
+//     isActive: boolean;
+//     icon: LucideIcon;
+// }
 
 export const Toolbar = () => {
     return (
