@@ -1,12 +1,7 @@
 "use client";
 
 import { useEditorStore } from "@/store/use-editor-store";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { Level } from "@tiptap/extension-heading";
 import { cn } from "@/lib/utils";
