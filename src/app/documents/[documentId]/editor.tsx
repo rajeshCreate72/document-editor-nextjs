@@ -10,9 +10,13 @@ import TableRow from "@tiptap/extension-table-row";
 import { Underline } from "@tiptap/extension-underline";
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
+import TextAlign from "@tiptap/extension-text-align";
 import Highlight from "@tiptap/extension-highlight";
 import Image from "@tiptap/extension-image";
 import ImageResize from "tiptap-extension-resize-image";
+import { Color } from "@tiptap/extension-color";
+import Link from "@tiptap/extension-link";
+
 import StarterKit from "@tiptap/starter-kit";
 
 import { useEditorStore } from "@/store/use-editor-store";
@@ -64,7 +68,16 @@ export const Editor = () => {
             Underline,
             FontFamily,
             TextStyle,
-            Highlight,
+            Highlight.configure({ multicolor: true }),
+            Color,
+            Link.configure({
+                openOnClick: false,
+                autolink: true,
+                defaultProtocol: "https",
+            }),
+            TextAlign.configure({
+                types: ["heading", "paragraph"],
+            }),
         ],
         content: `
         <table>

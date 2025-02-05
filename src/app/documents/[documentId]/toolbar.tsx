@@ -18,6 +18,12 @@ import {
 import { Separator } from "@/components/ui/separator";
 import FontFamilyButton from "@/components/buttons/font-family-button";
 import HeadingLevelButton from "@/components/buttons/heading-level-button";
+import TextColorButton from "@/components/buttons/text-color-button";
+import HighlightColorButton from "@/components/buttons/highlight-color-button";
+import LinkButton from "@/components/buttons/link-button";
+import ImageButton from "@/components/buttons/image-button";
+import AlignButton from "@/components/buttons/align-button";
+import ListButton from "@/components/buttons/list-button";
 
 interface ToolbarButtonProps {
     onClick?: () => void;
@@ -129,7 +135,12 @@ export const Toolbar = () => {
             {sections[1].map((item) => (
                 <ToolbarButton key={item.label} {...item} />
             ))}
-            {/* To do list */}
+            <TextColorButton />
+            <HighlightColorButton />
+            <LinkButton />
+            <ImageButton />
+            <AlignButton />
+            <ListButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300 " />
             {sections[2].map((item) => (
                 <ToolbarButton key={item.label} {...item} />
