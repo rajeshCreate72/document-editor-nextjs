@@ -1,15 +1,7 @@
 import { useEditorStore } from "@/store/use-editor-store";
 import { cn } from "@/lib/utils";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
-import {
-    AlignCenterIcon,
-    AlignJustifyIcon,
-    AlignLeftIcon,
-    AlignRightIcon,
-    HighlighterIcon,
-    ListIcon,
-    ListOrderedIcon,
-} from "lucide-react";
+import { ListIcon, ListOrderedIcon } from "lucide-react";
 import { type ColorResult, SketchPicker } from "react-color";
 
 const ListButton = () => {

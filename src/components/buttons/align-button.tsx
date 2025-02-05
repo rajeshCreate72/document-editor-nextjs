@@ -1,8 +1,7 @@
 import { useEditorStore } from "@/store/use-editor-store";
 import { cn } from "@/lib/utils";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
-import { AlignCenterIcon, AlignJustifyIcon, AlignLeftIcon, AlignRightIcon, HighlighterIcon } from "lucide-react";
-import { type ColorResult, SketchPicker } from "react-color";
+import { AlignCenterIcon, AlignJustifyIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react";
 
 const AlignButton = () => {
     const { editor } = useEditorStore();
