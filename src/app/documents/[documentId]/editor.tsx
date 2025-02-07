@@ -18,13 +18,17 @@ import { Color } from "@tiptap/extension-color";
 import Link from "@tiptap/extension-link";
 
 import StarterKit from "@tiptap/starter-kit";
+import { FontSizeExtension } from "@/extensions/font-size";
+import { LineHeightExtension } from "@/extensions/line-height";
 
 import { useEditorStore } from "@/store/use-editor-store";
+import { Ruler } from "./ruler";
 
 export const Editor = () => {
     const { setEditor } = useEditorStore();
 
     const editor = useEditor({
+        immediatelyRender: false,
         onCreate({ editor }) {
             setEditor(editor);
         },
@@ -78,6 +82,8 @@ export const Editor = () => {
             TextAlign.configure({
                 types: ["heading", "paragraph"],
             }),
+            FontSizeExtension,
+            LineHeightExtension,
         ],
         content: `
         <table>
@@ -99,6 +105,7 @@ export const Editor = () => {
 
     return (
         <div className="size-full overflow-x-auto bg-[#F7F9FD] px-4 print:bg-white print:p-0 print:overflow-visible ">
+            <Ruler />
             <div className="min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0 ">
                 <EditorContent editor={editor} />
             </div>
