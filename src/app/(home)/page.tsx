@@ -1,10 +1,16 @@
+"use client";
+
 import React from "react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Navbar } from "./navbar";
 import { TemplageGallery } from "./template-gallery";
 
+import { api } from "../../../convex/_generated/api";
+import { usePaginatedQuery } from "convex/react";
+import { DocumentsTable } from "./document-table";
+
 const Home = () => {
+    const { results, status, loadMore } = usePaginatedQuery(api.documents.get, {}, { initialNumItems: 5 });
+
     return (
         <div className="flex flex-col min-h-screen">
             <div className="fixed p-4 top-0 left-0 right-0 z-10 h-10 bg-white">
@@ -13,6 +19,7 @@ const Home = () => {
             <div className="mt-20">
                 <TemplageGallery />
             </div>
+            <DocumentsTable documents={results} loadMore={loadMore} status={status} />
         </div>
     );
 };
