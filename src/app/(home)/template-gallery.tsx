@@ -8,6 +8,7 @@ import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "../../../convex/_generated/api";
+import { toast } from "sonner";
 
 export const TemplageGallery = () => {
     const [isCreating, setIsCreating] = useState(false);
@@ -21,10 +22,11 @@ export const TemplageGallery = () => {
             if (documentId) {
                 router.push(`/documents/${documentId}`);
             } else {
-                console.error("Document ID is undefined");
+                toast.error("Error creating document");
             }
+            toast.success("Document created");
         } catch (error) {
-            console.error("Error creating document:", error);
+            toast.error("Check the network connection");
         } finally {
             setIsCreating(false);
         }

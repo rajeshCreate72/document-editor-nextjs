@@ -1,15 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar } from "./navbar";
 import { TemplageGallery } from "./template-gallery";
 
 import { api } from "../../../convex/_generated/api";
 import { usePaginatedQuery } from "convex/react";
 import { DocumentsTable } from "./document-table";
+import { useSearchParam } from "@/hooks/use-search-param";
 
 const Home = () => {
-    const { results, status, loadMore } = usePaginatedQuery(api.documents.get, {}, { initialNumItems: 5 });
+    const [search] = useSearchParam();
+    const { results, status, loadMore } = usePaginatedQuery(api.documents.get, { search }, { initialNumItems: 5 });
 
     return (
         <div className="flex flex-col min-h-screen">
