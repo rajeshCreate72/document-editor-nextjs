@@ -11,13 +11,17 @@ interface DocumentIdPageProps {
 const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
     const { documentId } = await params;
     const { getToken } = await auth();
-    const token = getToken({ template: "convex" }) ?? undefined;
+    const token = (await getToken({ template: "convex" })) ?? undefined;
 
     if (!token) {
         throw new Error("Unauthorized");
     }
 
     const preloadedDocument = await preloadQuery(api.documents.getById, { id: documentId }, { token });
+
+    if (!preloadedDocument) {
+        throw new Error("Document not found");
+    }
 
     return <Document preloadedDocument={preloadedDocument} />;
 };

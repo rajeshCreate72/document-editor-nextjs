@@ -25,7 +25,7 @@ export const TemplageGallery = () => {
                 toast.error("Error creating document");
             }
             toast.success("Document created");
-        } catch (error) {
+        } catch {
             toast.error("Check the network connection");
         } finally {
             setIsCreating(false);
@@ -53,7 +53,7 @@ export const TemplageGallery = () => {
                                         disabled={isCreating}
                                         onClick={() => {
                                             // TODO add proper initial content
-                                            onTemplateClick(template.label, "");
+                                            onTemplateClick(template.label, template.initialContent);
                                         }}
                                         style={{
                                             backgroundImage: `url(${template.imageUrl})`,

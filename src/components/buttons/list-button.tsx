@@ -2,7 +2,6 @@ import { useEditorStore } from "@/store/use-editor-store";
 import { cn } from "@/lib/utils";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
 import { ListIcon, ListOrderedIcon } from "lucide-react";
-import { type ColorResult, SketchPicker } from "react-color";
 
 const ListButton = () => {
     const { editor } = useEditorStore();

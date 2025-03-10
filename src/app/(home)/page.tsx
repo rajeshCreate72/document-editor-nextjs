@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Navbar } from "./navbar";
 import { TemplageGallery } from "./template-gallery";
 
