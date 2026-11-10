@@ -4,7 +4,7 @@ A Google Docs-style editor where several people can edit the same document at th
 
 **Live demo:** https://document-editor-nextjs.vercel.app/
 
-> **About this project:** I built this while following a course to learn Next.js, real-time collaboration and authentication. The structure follows that course. [ADD WHAT YOU CHANGED OR ADDED YOURSELF, e.g. features, fixes, styling.]
+> **About this project:** I built this while following a course to learn Next.js, real-time collaboration and authentication. The structure follows that course.
 
 ## Features
 
