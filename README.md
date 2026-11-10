@@ -63,8 +63,9 @@ src/middleware.ts           Clerk route protection
 2. Create a `.env.local` file in the project root:
 
    ```
+   CONVEX_DEPLOYMENT=
    NEXT_PUBLIC_CONVEX_URL=
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
    LIVEBLOCKS_SECRET_KEY=
    ```
 
